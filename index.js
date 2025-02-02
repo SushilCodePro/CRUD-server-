@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import 'dotenv/config'
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON requests
@@ -71,7 +72,7 @@ app.delete('/api/data/:id', (req, res) => {
 });
 
 // Define the server port
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Start the server
 app.listen(PORT, () => {
